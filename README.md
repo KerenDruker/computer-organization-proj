@@ -126,7 +126,7 @@ Output Generation: Writes the resulting machine code to an output file, in a for
 ## 🕹️ Simulator.c Functionality
 Simulator.c executes the binary machine code in a simulated environment. 
 
-Memory Initialization: Sets up an array or similar data structure to represent memory.
+Memory Initialization: Sets up an array structure to represent memory.
 
 Register Initialization: Initializes registers used by the SIMP processor, including general-purpose and special-purpose registers.
 
