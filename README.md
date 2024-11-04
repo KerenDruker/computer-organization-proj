@@ -51,7 +51,7 @@ gcc -o asm Main.c Assembler.c -I.
 ./asm program.asm memin.txt
 ```
 
-# How to Build
+# Setup
 1. Compile the C files using a C compiler, such as GCC:
 ```bash
 gcc -o sim simulator.c Main.c -I.
