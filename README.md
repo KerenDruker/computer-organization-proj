@@ -121,7 +121,7 @@ First Pass: Identifies all labels and calculates their addresses, which is cruci
 
 Second Pass: Translates assembly instructions into machine code, replacing labels with their resolved addresses.
 
-Output Generation: Writes the resulting machine code to an output file, typically in a format that the simulator can read directly.
+Output Generation: Writes the resulting machine code to an output file, in a format that the simulator can read directly.
 
 ## 🕹️ Simulator.c Functionality
 Simulator.c executes the binary machine code in a simulated environment. 
