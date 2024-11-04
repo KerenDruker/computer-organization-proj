@@ -1,3 +1,3 @@
-🖥️ SIMP Processor Simulator and Assembler
+## 🖥️ SIMP Processor Simulator and Assembler
 
 Introduction
