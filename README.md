@@ -51,41 +51,6 @@ gcc -o asm Main.c Assembler.c -I.
 ./asm program.asm memin.txt
 ```
 
-Let's create a clear and simple README for your project based on all the documentation and code files you provided. This README will outline the purpose of the project, the main components, how to run the program, and the input and output files involved.
-
-SIMP Processor Simulator and Assembler
-Project Overview
-This project involves creating a simulator and an assembler for a RISC processor called SIMP. The assembler translates written assembly code into machine code, while the simulator reads this machine code and simulates its execution on the SIMP processor.
-
-Components
-Main Files
-Main.c - Initializes and orchestrates the simulation and assembly processes based on command-line inputs.
-Assembler.c - Handles the conversion of assembly language into machine code and outputs a memory image.
-simulator.c - Executes the binary code, simulating the SIMP processor operations including fetching, decoding, and executing instructions.
-Documentation
-Instructions.pdf - Provides detailed instructions, specifications, and guidance for the SIMP processor project.
-Functionality
-The SIMP processor contains 16 registers and supports R and I format instructions.
-The assembler runs through the code twice: first to identify and store labels, and second to translate instructions into machine code.
-The simulator follows the fetch-decode-execute cycle typical of RISC processors.
-Input and Output Files
-memin.txt: Input file for the simulator containing the initial memory state in machine code.
-memout.txt: Output file showing the memory state after simulation.
-regout.txt: Outputs the final state of the processor's registers.
-trace.txt: Provides a detailed trace of each executed instruction, showing the state before execution.
-cycles.txt: Records the number of clock cycles used during the simulation.
-Running the Program
-Ensure you have the executable files (sim.exe for the simulator and asm.exe for the assembler) along with the necessary .txt files in the same directory.
-
-Assembler
-bash
-Copy code
-./asm.exe program.asm memin.txt
-Simulator
-bash
-Copy code
-./sim.exe memin.txt memout.txt regout.txt trace.txt cycles.txt
-
 # How to Build
 1. Compile the C files using a C compiler, such as GCC:
 ```bash
@@ -151,8 +116,11 @@ Includes error detection for invalid memory accesses or illegal instructions.
 Assembler.c translates assembly code for the SIMP processor into machine code. Here’s what each part does based on typical assembler tasks:
 
 Reading Input: It reads assembly instructions from a file, handling labels and directives.
+
 First Pass: Identifies all labels and calculates their addresses, which is crucial for branching and data referencing.
+
 Second Pass: Translates assembly instructions into machine code, replacing labels with their resolved addresses.
+
 Output Generation: Writes the resulting machine code to an output file, typically in a format that the simulator can read directly.
 Here’s an example operation you might find based on standard assembler behavior:
 
@@ -162,15 +130,20 @@ Label Handling: It might use a hashmap or dictionary to store label addresses en
 Simulator.c executes the binary machine code in a simulated environment. Here’s the breakdown of its tasks:
 
 Memory Initialization: Sets up an array or similar data structure to represent memory.
+
 Register Initialization: Initializes registers used by the SIMP processor, including general-purpose and special-purpose registers.
+
 Fetch-Decode-Execute Loop:
+
 Fetch: Retrieves the next instruction from memory based on the program counter.
+
 Decode: Parses the instruction to understand which operation to perform and which registers or memory addresses are involved.
+
 Execute: Performs the operation, which could be arithmetic, logical, data movement, or control flow change.
+
 Output Handling: At the end of simulation, outputs the state of memory and registers, and possibly a trace of execution steps.
 An example operation in the fetch-decode-execute loop might look like this:
 
 Branch Handling: For a branch instruction, the condition is evaluated, and the program counter is updated to point to the target instruction if the condition is true.
 Integration and Execution
-Both assembler.c and simulator.c would typically be integrated via a main function or script that handles which component to execute based on user input. This would involve parsing command-line arguments, initializing necessary resources, and handling any file I/O operations required for reading input and writing output.
 
