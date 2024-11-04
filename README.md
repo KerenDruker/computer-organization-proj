@@ -5,14 +5,18 @@
 This project develops a software-based simulator and assembler for the SIMP processor, a simplified RISC-like processor designed for educational purposes. The programs are crafted in C, showcasing a simulation of processor operations and an assembler that converts assembly code into machine-readable format.
 
 # Project Structure
-•	**Main.c** - Entry point.
+• **Main.c** - Entry point.
 
-•	**Assembler.c** - Source file containing the assembler logic.
+• **Assembler.c** - Source file containing the assembler logic.
     Translates assembly language into binary machine code. It performs label resolution and binary encoding, outputting the memory image file (memin.txt) that serves as the input for the simulator.
     
-•	**simulator.c** - Source file containing the simulation logic for the SIMP processor.
+• **simulator.c** - Source file containing the simulation logic for the SIMP processor.
     Simulates the SIMP processor's fetch-decode-execute cycle, interpreting and executing binary code and writing the results to various output files. It also manages the cycling and timing based on instruction and memory access requirements.
     
+# Functionality
+•  The SIMP processor contains 16 registers and supports R and I format instructions.
+•  The assembler runs through the code twice: first to identify and store labels, and second to translate instructions into machine code.
+•  The simulator follows the fetch-decode-execute cycle typical of RISC processors.
 
 # Input and Output Files
 •	**memin.txt:** Serves as the input memory file for the simulator, containing the initial state of the processor's memory as a series of 20-bit binary encoded lines, representing the loaded machine code and initial memory state.
@@ -28,10 +32,11 @@ This project develops a software-based simulator and assembler for the SIMP proc
 Setup
 Compile the project with the following commands:
 
-bash
-Copy code
+``` bash
+
 gcc -o sim Main.c simulator.c -I.
 gcc -o asm Main.c Assembler.c -I.
+```
 
 # Running Instructions
 # 🚀 Simulator
@@ -45,6 +50,51 @@ gcc -o asm Main.c Assembler.c -I.
 ``` bash
 ./asm program.asm memin.txt
 ```
+
+Let's create a clear and simple README for your project based on all the documentation and code files you provided. This README will outline the purpose of the project, the main components, how to run the program, and the input and output files involved.
+
+SIMP Processor Simulator and Assembler
+Project Overview
+This project involves creating a simulator and an assembler for a RISC processor called SIMP. The assembler translates written assembly code into machine code, while the simulator reads this machine code and simulates its execution on the SIMP processor.
+
+Components
+Main Files
+Main.c - Initializes and orchestrates the simulation and assembly processes based on command-line inputs.
+Assembler.c - Handles the conversion of assembly language into machine code and outputs a memory image.
+simulator.c - Executes the binary code, simulating the SIMP processor operations including fetching, decoding, and executing instructions.
+Documentation
+Instructions.pdf - Provides detailed instructions, specifications, and guidance for the SIMP processor project.
+Functionality
+The SIMP processor contains 16 registers and supports R and I format instructions.
+The assembler runs through the code twice: first to identify and store labels, and second to translate instructions into machine code.
+The simulator follows the fetch-decode-execute cycle typical of RISC processors.
+Input and Output Files
+memin.txt: Input file for the simulator containing the initial memory state in machine code.
+memout.txt: Output file showing the memory state after simulation.
+regout.txt: Outputs the final state of the processor's registers.
+trace.txt: Provides a detailed trace of each executed instruction, showing the state before execution.
+cycles.txt: Records the number of clock cycles used during the simulation.
+Running the Program
+Ensure you have the executable files (sim.exe for the simulator and asm.exe for the assembler) along with the necessary .txt files in the same directory.
+
+Assembler
+bash
+Copy code
+./asm.exe program.asm memin.txt
+Simulator
+bash
+Copy code
+./sim.exe memin.txt memout.txt regout.txt trace.txt cycles.txt
+
+# How to Build
+1. Compile the C files using a C compiler, such as GCC:
+```bash
+gcc -o sim simulator.c Main.c -I.
+gcc -o asm Assembler.c Main.c -I.
+```
+2. Run the assembler to generate the memory input file.
+3. Execute the simulator with the generated memory input file.
+
 
 # Detailed Explanation of Components
 ## Registers
