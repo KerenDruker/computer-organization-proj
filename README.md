@@ -113,7 +113,7 @@ Includes error detection for invalid memory accesses or illegal instructions.
 # Detailed Explanation of Code Implementation
 
 ## 🛠️ Assembler.c Functionality
-Assembler.c translates assembly code for the SIMP processor into machine code. Here’s what each part does based on typical assembler tasks:
+Assembler.c translates assembly code for the SIMP processor into machine code. 
 
 Reading Input: It reads assembly instructions from a file, handling labels and directives.
 
@@ -122,12 +122,9 @@ First Pass: Identifies all labels and calculates their addresses, which is cruci
 Second Pass: Translates assembly instructions into machine code, replacing labels with their resolved addresses.
 
 Output Generation: Writes the resulting machine code to an output file, typically in a format that the simulator can read directly.
-Here’s an example operation you might find based on standard assembler behavior:
-
-Label Handling: It might use a hashmap or dictionary to store label addresses encountered in the first pass, then replace these labels in the second pass with actual numeric addresses.
 
 ## 🕹️ Simulator.c Functionality
-Simulator.c executes the binary machine code in a simulated environment. Here’s the breakdown of its tasks:
+Simulator.c executes the binary machine code in a simulated environment. 
 
 Memory Initialization: Sets up an array or similar data structure to represent memory.
 
