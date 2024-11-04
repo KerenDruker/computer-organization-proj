@@ -37,41 +37,57 @@ gcc -o asm Main.c Assembler.c -I.
 # 🚀 Simulator
 
 ``` bash
-Copy code
 ./sim memin.txt memout.txt regout.txt trace.txt cycles.txt
+```
 
 # 📝 Assembler
 
-bash
-Copy code
+``` bash
 ./asm program.asm memin.txt
-Detailed Explanation of Components
-Registers
+```
+
+# Detailed Explanation of Components
+## Registers
+
 The SIMP processor features several registers, each serving specific functions:
 
-Register Number	Register Name	Purpose
-0	$zero	Constant zero, always reads as zero
-1	$imm	Immediate value, sign-extended
-2 - 15	$v0 - $ra	General purpose and special registers
-Instruction Formats
-R Format
-Field	Bit Position	Description
-opcode	19:12	Operation code
-rd	11:8	Destination register
-rs	7:4	Source register 1
-rt	3:0	Source register 2
-I Format
-Field	Bit Position	Description
-opcode	19:12	Operation code
-rd	11:8	Destination register
-rs	7:4	Source register 1
-imm	16 bits	Immediate value
-Supported Instructions
-Opcode	Instruction	Description
-0	add	Adds rs and rt, stores in rd
-1	sub	Subtracts rt from rs, stores in rd
-...	...	...
-18	halt	Halts execution, exits simulator
+| Register Number | Register Name | Purpose                                  |
+|-----------------|---------------|------------------------------------------|
+| 0               | $zero         | Constant zero, always reads as zero      |
+| 1               | $imm          | Immediate value, sign-extended           |
+| 2 - 15          | $v0 - $ra     | General purpose and special registers    |
+
+## Instruction Formats
+
+### R Format
+
+| Field  | Bit Position | Description       |
+|--------|--------------|-------------------|
+| opcode | 19:12        | Operation code    |
+| rd     | 11:8         | Destination register |
+| rs     | 7:4          | Source register 1 |
+| rt     | 3:0          | Source register 2 |
+
+### I Format
+
+| Field  | Bit Position | Description       |
+|--------|--------------|-------------------|
+| opcode | 19:12        | Operation code    |
+| rd     | 11:8         | Destination register |
+| rs     | 7:4          | Source register 1 |
+| imm    | 16 bits      | Immediate value   |
+
+## Supported Instructions
+
+| Opcode | Instruction | Description                                |
+|--------|-------------|--------------------------------------------|
+| 0      | add         | Adds rs and rt, stores in rd               |
+| 1      | sub         | Subtracts rt from rs, stores in rd         |
+| ...    | ...         | ...                                        |
+| 18     | halt        | Halts execution, exits simulator           |
+
+
+
 Functionality of Code Implementation
 Memory Handling: Manages the main memory of the processor, simulating reads and writes.
 Fetch-Decode-Execute Cycle: Implements the core cycle of fetching an instruction, decoding it, and then executing it to simulate real processor behavior.
