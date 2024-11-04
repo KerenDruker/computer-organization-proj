@@ -32,12 +32,16 @@ bash
 Copy code
 gcc -o sim Main.c simulator.c -I.
 gcc -o asm Main.c Assembler.c -I.
-Running Instructions
-🚀 Simulator
-bash
+
+# Running Instructions
+# 🚀 Simulator
+
+``` bash
 Copy code
 ./sim memin.txt memout.txt regout.txt trace.txt cycles.txt
-📝 Assembler
+
+# 📝 Assembler
+
 bash
 Copy code
 ./asm program.asm memin.txt
