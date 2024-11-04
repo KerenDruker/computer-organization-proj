@@ -138,9 +138,4 @@ Decode: Parses the instruction to understand which operation to perform and whic
 
 Execute: Performs the operation, which could be arithmetic, logical, data movement, or control flow change.
 
-Output Handling: At the end of simulation, outputs the state of memory and registers, and possibly a trace of execution steps.
-An example operation in the fetch-decode-execute loop might look like this:
-
-Branch Handling: For a branch instruction, the condition is evaluated, and the program counter is updated to point to the target instruction if the condition is true.
-Integration and Execution
-
+Output Handling: At the end of simulation, outputs the state of memory and registers.
