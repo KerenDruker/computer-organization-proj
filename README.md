@@ -138,11 +138,11 @@ The SIMP processor features several registers, each serving specific functions:
 
 
 
-Functionality of Code Implementation
-Memory Handling: Manages the main memory of the processor, simulating reads and writes.
-Fetch-Decode-Execute Cycle: Implements the core cycle of fetching an instruction, decoding it, and then executing it to simulate real processor behavior.
-Error Handling: Includes error detection for invalid memory accesses or illegal instructions.
-Efficiency Improvements: Optimizes execution where possible to reduce simulation time without compromising the accuracy of the processor simulation.
+# Memory Handling: 
+Manages the main memory of the processor, simulating reads and writes.
+
+# Error Handling: 
+Includes error detection for invalid memory accesses or illegal instructions.
 
 ## Detailed Explanation of Code Implementation
 
