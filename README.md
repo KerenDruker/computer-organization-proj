@@ -1,1 +1,3 @@
-# computer-organization-proj
+🖥️ SIMP Processor Simulator and Assembler
+
+Introduction
