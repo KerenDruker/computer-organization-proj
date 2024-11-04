@@ -24,3 +24,33 @@ This project develops a software-based simulator and assembler for the SIMP proc
 •	**trace.txt:** Logs each instruction executed during the simulation, listing the program counter, the instruction itself, and the state of all registers before execution, all formatted in hexadecimal.
 
 •	**cycles.txt:** Records the total number of clock cycles consumed during the simulation, providing insight into the performance and efficiency of the simulated processor.
+
+## Detailed Explanation of Code Implementation
+
+# Assembler.c Functionality
+Assembler.c translates assembly code for the SIMP processor into machine code. Here’s what each part does based on typical assembler tasks:
+
+Reading Input: It reads assembly instructions from a file, handling labels and directives.
+First Pass: Identifies all labels and calculates their addresses, which is crucial for branching and data referencing.
+Second Pass: Translates assembly instructions into machine code, replacing labels with their resolved addresses.
+Output Generation: Writes the resulting machine code to an output file, typically in a format that the simulator can read directly.
+Here’s an example operation you might find based on standard assembler behavior:
+
+Label Handling: It might use a hashmap or dictionary to store label addresses encountered in the first pass, then replace these labels in the second pass with actual numeric addresses.
+
+# Simulator.c Functionality
+Simulator.c executes the binary machine code in a simulated environment. Here’s the breakdown of its tasks:
+
+Memory Initialization: Sets up an array or similar data structure to represent memory.
+Register Initialization: Initializes registers used by the SIMP processor, including general-purpose and special-purpose registers.
+Fetch-Decode-Execute Loop:
+Fetch: Retrieves the next instruction from memory based on the program counter.
+Decode: Parses the instruction to understand which operation to perform and which registers or memory addresses are involved.
+Execute: Performs the operation, which could be arithmetic, logical, data movement, or control flow change.
+Output Handling: At the end of simulation, outputs the state of memory and registers, and possibly a trace of execution steps.
+An example operation in the fetch-decode-execute loop might look like this:
+
+Branch Handling: For a branch instruction, the condition is evaluated, and the program counter is updated to point to the target instruction if the condition is true.
+Integration and Execution
+Both assembler.c and simulator.c would typically be integrated via a main function or script that handles which component to execute based on user input. This would involve parsing command-line arguments, initializing necessary resources, and handling any file I/O operations required for reading input and writing output.
+
